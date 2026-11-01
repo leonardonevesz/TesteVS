@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Uma Carta Para Você ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Corações flutuantes -->
+    <div class="coracoes" id="coracoes"></div>
+
+    <main class="container">
+
+        <div class="carta">
+
+            <p class="subtitulo">UMA SURPRESA PARA VOCÊ</p>
+
+            <h1>Uma cartinha especial...</h1>
+
+            <div class="divisor">♡ ───── ♡</div>
+
+            <p class="mensagem-intro">
+                Preparei algo com muito carinho para você.
+                Clique no selo para descobrir sua surpresa. ❤️
+            </p>
+
+            <!-- Área do envelope -->
+            <div class="area-envelope" id="areaEnvelope">
+
+                <div class="envelope" id="envelope">
+
+                    <!-- Carta que sai do envelope -->
+                    <div class="papel-carta" id="papelCarta">
+
+                        <div class="conteudo-carta">
+                            <p class="titulo-carta">Para você... 💌</p>
+
+                            <p>
+                               Te fiz uma cartinha boba, porque achei que ia ficar feliz!
+                            </p>
+
+                            <p>
+                                Só queria te falar pra você confiar mais em si mesma, você é muito especial pra todos que realmente se importam com vc, e principalmente pra mim.
+                            Saiba que sempre vou estar aqui, e você ja tem um lugar especial em minhas orações. 
+                            Obrigado por fazer tudo que faz por mim, e vou ficar mto feliz se eu puder conhecer mais a Isabella e tirar essse vazio que eu sei que ela sente as vezes.
+                            </p>
+
+                            <p>
+                                Eu amo você Isabella Fiacadori! E espero ser um pouquinho da paz que você procura.
+                            </p>
+
+                            <p class="assinatura-carta">
+                                Com todo o meu carinho, ❤️
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Parte traseira do envelope -->
+                    <div class="envelope-fundo"></div>
+
+                    <!-- Parte da frente do envelope -->
+                    <div class="envelope-frente"></div>
+
+                    <!-- Aba superior -->
+                    <div class="envelope-aba"></div>
+
+                    <!-- Selo clicável -->
+                    <button
+                        class="selo"
+                        id="selo"
+                        onclick="abrirCarta()"
+                        aria-label="Abrir a carta"
+                        type="button">
+                        ❤️
+                    </button>
+
+                </div>
+
+            </div>
+            <button
+                class="botao-musica"
+                id="botaoMusica"
+                onclick="alternarMusica()"
+                type="button">
+                ❚❚ Pausar música
+            </button>
+
+            <audio id="musica" loop>
+                <source src="/audio/Matuê - Maria - 30PRAUM.mp3.mpeg" type="audio/mpeg">
+                Seu navegador não suporta áudio.
+            </audio>
+
+            <button
+                class="botao-voltar"
+                onclick="voltar()"
+                type="button">
+                ← Voltar para o início
+            </button>
+
+        </div>
+
+        <p class="rodape">Feito com amor ❤️</p>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

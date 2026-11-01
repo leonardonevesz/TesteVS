@@ -1,0 +1,593 @@
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #c3e0f7,
+        #a4cbed,
+        #d6eaff,
+        #9bc5e8
+    );
+    background-size: 300% 300%;
+    animation: fundoSuave 12s ease infinite;
+    color: #354f68;
+    overflow-x: hidden;
+}
+
+@keyframes fundoSuave {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ==============================
+   CORAÇÕES FLUTUANTES
+============================== */
+
+.coracoes {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.coracao-flutuante {
+    position: absolute;
+    bottom: -40px;
+    color: rgba(55, 126, 190, 0.45);
+    animation: flutuar linear forwards;
+    text-shadow: 0 0 10px rgba(91, 169, 230, 0.45);
+}
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    85% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ==============================
+   CONTAINER PRINCIPAL
+============================== */
+
+.container {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 20px;
+}
+
+/* ==============================
+   CARTÃO PRINCIPAL
+============================== */
+
+.carta {
+    width: 100%;
+    max-width: 650px;
+    padding: 45px 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(91, 169, 230, 0.55);
+    border-radius: 25px;
+    box-shadow:
+        0 10px 35px rgba(47, 104, 153, 0.18),
+        0 0 25px rgba(91, 169, 230, 0.18);
+    backdrop-filter: blur(10px);
+    animation: aparecer 1s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==============================
+   ÍCONE PRINCIPAL
+============================== */
+
+.coracao-principal {
+    font-size: 55px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 4px 8px rgba(55, 126, 190, 0.25));
+    animation: pulsar 2s ease-in-out infinite;
+}
+
+@keyframes pulsar {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+/* ==============================
+   TEXTOS
+============================== */
+
+.subtitulo {
+    color: #397eb5;
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+h1 {
+    color: #244d70;
+    font-size: 30px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.divisor {
+    color: #5b9bd5;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.mensagem {
+    color: #435b72;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.assinatura {
+    color: #397eb5;
+    font-size: 15px;
+    font-style: italic;
+    margin: 25px 0;
+}
+
+.mensagem-intro {
+    color: #435b72;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.rodape {
+    color: #456b8b;
+    font-size: 12px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+/* ==============================
+   BOTÕES
+============================== */
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#botaoContinuar,
+.botao-musica,
+.botao-voltar {
+    border: none;
+    border-radius: 30px;
+    padding: 14px 25px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#botaoContinuar {
+    color: #ffffff;
+    background: linear-gradient(135deg, #5b9bd5, #347db5);
+    box-shadow: 0 5px 18px rgba(52, 125, 181, 0.3);
+}
+
+#botaoContinuar:hover {
+    background: linear-gradient(135deg, #468bc7, #28689b);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(52, 125, 181, 0.4);
+}
+
+#botaoContinuar span {
+    margin-left: 8px;
+}
+
+#botaoContinuar:disabled {
+    opacity: 0.7;
+    cursor: wait;
+    transform: none;
+}
+
+.botao-musica {
+    color: #ffffff;
+    background: linear-gradient(135deg, #5b9bd5, #347db5);
+    box-shadow: 0 4px 15px rgba(52, 125, 181, 0.25);
+    margin-top: 20px;
+}
+
+.botao-musica:hover {
+    background: linear-gradient(135deg, #468bc7, #28689b);
+    transform: translateY(-2px);
+}
+
+.botao-voltar {
+    color: #315f85;
+    background: #e5f2ff;
+    border: 1px solid #b5d4f0;
+    margin-top: 15px;
+}
+
+.botao-voltar:hover {
+    color: #244d70;
+    background: #cfe6fb;
+    transform: translateY(-2px);
+}
+
+/* ==============================
+   FOTOGRAFIA ROMÂNTICA
+============================== */
+
+.foto-romantica {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    height: 250px;
+    object-fit: cover;
+    margin: 20px auto;
+    border: 3px solid #9bc5e8;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(52, 125, 181, 0.25);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.foto-romantica:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 28px rgba(52, 125, 181, 0.4);
+}
+
+/* ==============================
+   ÁREA DO ENVELOPE
+============================== */
+
+.area-envelope {
+    position: relative;
+    z-index: 1;
+    min-height: 440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    margin-bottom: 15px;
+    overflow: visible;
+}
+
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 195px;
+    isolation: isolate;
+    perspective: 1000px;
+}
+
+/* Parte de trás do envelope */
+
+.envelope-fundo {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #a4cbed, #6eaddf);
+    border: 1px solid #7fb5e3;
+    border-radius: 5px;
+    box-shadow: 0 10px 25px rgba(47, 104, 153, 0.22);
+}
+
+/* Parte da frente do envelope */
+
+.envelope-frente {
+    position: absolute;
+    inset: 0;
+    background: #c5e2fa;
+    clip-path: polygon(0 0, 50% 60%, 100% 0, 100% 100%, 0 100%);
+    border-radius: 5px;
+    z-index: 4;
+}
+
+/* Aba superior */
+
+.envelope-aba {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #8dbce5, #b4d8f5);
+    clip-path: polygon(0 0, 100% 0, 50% 58%);
+    transform-origin: top;
+    transition: transform 0.8s ease;
+    z-index: 5;
+}
+
+/* Selo em formato de coração */
+
+.selo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4c91cb, #347db5);
+    color: #ffffff;
+    font-size: 23px;
+    box-shadow: 0 4px 15px rgba(40, 99, 151, 0.35);
+    z-index: 10;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.selo:hover {
+    transform: translate(-50%, -50%) scale(1.12);
+    box-shadow: 0 0 22px rgba(52, 125, 181, 0.5);
+}
+
+/* ==============================
+   PAPEL DA CARTA
+============================== */
+
+.papel-carta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    padding: 22px;
+    background: #ffffff;
+    border: 1px solid #b5d4f0;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(47, 104, 153, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transform: translate(-50%, -50%) scale(0.85);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        visibility 0.7s;
+    z-index: 2;
+}
+
+.conteudo-carta {
+    color: #435b72;
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.titulo-carta {
+    color: #347db5;
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.conteudo-carta p {
+    margin-bottom: 12px;
+}
+
+.assinatura-carta {
+    color: #397eb5;
+    font-style: italic;
+    text-align: right;
+    margin-top: 20px;
+}
+
+/* ==============================
+   ANIMAÇÃO DE ABERTURA
+============================== */
+
+.envelope.aberto .envelope-aba {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope.aberto .selo {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.envelope.aberto .papel-carta {
+    width: 96%;
+    height: 350px;
+    max-height: 55vh;
+    opacity: 1;
+    visibility: visible;
+    overflow-y: auto;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 8;
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        visibility 0.7s;
+}
+
+/* Barra de rolagem da carta */
+
+.papel-carta::-webkit-scrollbar {
+    width: 6px;
+}
+
+.papel-carta::-webkit-scrollbar-track {
+    background: #e5f2ff;
+    border-radius: 10px;
+}
+
+.papel-carta::-webkit-scrollbar-thumb {
+    background: #8dbce5;
+    border-radius: 10px;
+}
+
+.papel-carta::-webkit-scrollbar-thumb:hover {
+    background: #5b9bd5;
+}
+
+/* Instrução abaixo do envelope */
+
+.instrucao {
+    color: #397eb5;
+    font-size: 13px;
+    margin: 10px 0;
+}
+
+/* ==============================
+   ACESSIBILIDADE
+============================== */
+
+button:focus-visible {
+    outline: 3px solid #347db5;
+    outline-offset: 4px;
+}
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 600px) {
+    .container {
+        padding: 25px 15px;
+    }
+
+    .carta {
+        padding: 30px 22px;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .mensagem {
+        font-size: 15px;
+    }
+
+    .area-envelope {
+        min-height: 380px;
+        padding: 20px 0;
+        margin-bottom: 10px;
+    }
+
+    .envelope {
+        width: 270px;
+        height: 175px;
+    }
+
+    .envelope.aberto .papel-carta {
+        height: 300px;
+        max-height: 50vh;
+    }
+
+    .foto-romantica {
+        max-width: 100%;
+        height: 220px;
+    }
+
+    #botaoContinuar,
+    .botao-musica,
+    .botao-voltar {
+        max-width: 100%;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 360px) {
+    .carta {
+        padding: 25px 16px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .area-envelope {
+        min-height: 350px;
+    }
+
+    .envelope {
+        width: 240px;
+        height: 160px;
+    }
+
+    .envelope.aberto .papel-carta {
+        height: 270px;
+        max-height: 48vh;
+        padding: 16px;
+    }
+
+    .conteudo-carta {
+        font-size: 13px;
+    }
+}
+
+/* ==============================
+   MOVIMENTO REDUZIDO
+============================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
